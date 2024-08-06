@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/main.css">
+    <title>JavaScript Playground</title>
+</head>
+<body>
+    <header class="elevated-box">
+        <p>JavaScript Playground</p>
+    </header>
+    
+    <main>
+        <div class="area-intro">
+            <h1>Practice Cards</h1>
+            <p>Each card is made to practice one or more JavaScript concept.</p>
+        </div>
+        
+        <div class="card elevated-box">
+            <h2>Card 1: Alerts</h2>
+            <button class="btn-primary" onclick="giveMessage()">Show alert popup</button>
+        </div>
+
+        <div class="card elevated-box">
+            <h2>Card 2: Text manipulation</h2>
+            <input type="text" name="txtManipInput" id="txtManipInput" placeholder="Type text here...">
+            <p id="txtManipOutput"></p>
+            <button class="btn-primary" onclick="makeUpper()">To Uppercase</button>
+            <button class="btn-primary" onclick="makeLower()">To Lowercase</button>
+            <button class="btn-primary" onclick="stringLength()">Get Length</button>
+        </div>
+    </main>
+
+    <script src="javascript/main.js"></script>
+</body>
+</html>

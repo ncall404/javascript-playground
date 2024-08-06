@@ -1,0 +1,83 @@
+:root {
+    --background-light: #F5F7F8;
+    --background-dark: #45474B;
+    --color-primary: #495E57;
+    --color-accent: #F4CE14;
+    --color-accent-hover: #ffee00;
+    --radius-main: 4px;
+}
+
+* {
+    margin: 0 auto;
+    font-family: sans-serif;
+}
+
+body {
+    background-color: var(--background-light);
+    margin: 0 auto;
+}
+
+header {
+    background-color: var(--color-primary);
+    color: white;
+}
+
+header p {
+    margin: 0;
+    padding: 20px 10px;
+    font-size: larger;
+}
+
+main {
+    width: 900px;
+    margin: auto;
+}
+
+button {
+    min-width: 80px;
+    min-height: 30px;
+    margin: 10px 0px;
+    padding: 5px 20px;
+    border: 0px;
+    border-radius: var(--radius-main);
+}
+
+button:hover {
+    background-color: var(--color-accent-hover);
+}
+
+.btn-primary {
+    font-weight: 600;
+    background-color: var(--color-accent);
+}
+
+.area-intro {
+    padding: 10px 0px;
+}
+
+.area-intro h1 {
+    margin: 0.5rem 0;
+}
+
+.card {
+    background-color: var(--background-dark);
+    color: white;
+    margin: 10px;
+    padding: 20px;
+    border: 0px;
+    border-radius: var(--radius-main);
+}
+
+.card h2 {
+    font-size: 1.2rem;
+}
+
+.elevated-box {
+    box-shadow: 0px 2px 2px #979ba1;
+}
+
+input {
+    border-radius: var(--radius-main);
+    padding: 5px;
+    margin: 5px 0px;
+}
