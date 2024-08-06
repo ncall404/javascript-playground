@@ -1,20 +1,20 @@
+const cardTwoSource = document.getElementById("txtManipInput");
+const cardTwoTarget = document.getElementById("txtManipOutput");
+
 function giveMessage() {
     window.alert("Test alert!");
 }
 
-const source = document.getElementById("txtManipInput");
-const target = document.getElementById("txtManipOutput");
-
 function makeUpper() {
-    target.textContent = source.value.toUpperCase();
-    console.log(source.value);
+    cardTwoTarget.textContent = cardTwoSource.value.toUpperCase();
+    console.log(cardTwoSource.value);
 }
 
 function makeLower() {
-    target.textContent = source.value.toLowerCase();
-    console.log(source.value);
+    cardTwoTarget.textContent = cardTwoSource.value.toLowerCase();
+    console.log(cardTwoSource.value);
 }
 
 function stringLength() {
-    target.textContent = source.value.length;
+    cardTwoTarget.textContent = cardTwoSource.value.length;
 }
