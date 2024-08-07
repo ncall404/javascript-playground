@@ -1,6 +1,5 @@
 const cardTwoSource = document.getElementById("txtManipInput");
 const cardTwoTarget = document.getElementById("txtManipOutput");
-const arrayLengthDisplay = document.getElementById("arrayLength");
 const countArray = [];
 
 function giveMessage() {
@@ -31,7 +30,7 @@ function increaseArray() {
     } else {
         countArray.unshift(countArray.length);
     }
-    arrayLengthDisplay.innerHTML = countArray.length;
+    updateCountArrayDisplay();
 }
 
 function decreaseArray() {
@@ -41,14 +40,21 @@ function decreaseArray() {
         } else {
             countArray.shift();
         }
-        arrayLengthDisplay.innerHTML = countArray.length;
+        updateCountArrayDisplay();
     }
 }
 
-function showCountArray() {
-    window.alert(countArray.toString());
+function updateCountArrayDisplay() {
+    const len = countArray.length;
+    document.getElementById("arrayLength").innerHTML = len;
+    if (len > 0) {
+        document.getElementById("arrayContents").innerHTML = countArray.toString();
+    } else {
+        document.getElementById("arrayContents").innerHTML = "empty";
+    }
 }
 
 function reverseArray() {
     countArray.reverse();
+    updateCountArrayDisplay();
 }

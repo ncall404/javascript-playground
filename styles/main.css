@@ -100,3 +100,8 @@ input {
     padding: 5px;
     margin: 10px 0px;
 }
+
+hr {
+    margin: 10px 0px;
+    border-color: #818387;
+}
