@@ -26,17 +26,29 @@ function clearInput(inputSourceId) {
 }
 
 function increaseArray() {
-    countArray.push(countArray.length)
+    if (countArray[0] === 0) {
+        countArray.push(countArray.length);
+    } else {
+        countArray.unshift(countArray.length);
+    }
     arrayLengthDisplay.innerHTML = countArray.length;
 }
 
 function decreaseArray() {
     if (countArray.length > 0) {
-        countArray.pop()
+        if (countArray[0] === 0) {
+            countArray.pop();
+        } else {
+            countArray.shift();
+        }
         arrayLengthDisplay.innerHTML = countArray.length;
     }
 }
 
 function showCountArray() {
-    window.alert(countArray.toString())
+    window.alert(countArray.toString());
+}
+
+function reverseArray() {
+    countArray.reverse();
 }
