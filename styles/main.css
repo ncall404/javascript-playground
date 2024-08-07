@@ -3,7 +3,9 @@
     --background-dark: #45474B;
     --color-primary: #495E57;
     --color-accent: #F4CE14;
-    --color-accent-hover: #ffee00;
+    --color-accent-highlight: #ffee00;
+    --color-danger: #d23729;
+    --color-danger-highlight: #fc3d2c;
     --radius-main: 4px;
 }
 
@@ -40,15 +42,28 @@ button {
     padding: 5px 20px;
     border: 0px;
     border-radius: var(--radius-main);
-}
-
-button:hover {
-    background-color: var(--color-accent-hover);
+    transition-duration: 150ms;
 }
 
 .btn-primary {
     font-weight: 600;
     background-color: var(--color-accent);
+}
+
+.btn-primary:hover {
+    background-color: var(--color-accent-highlight);
+    box-shadow: inset 0px -4px var(--color-accent);
+}
+
+.btn-danger {
+    font-weight: 600;
+    background-color: var(--color-danger);
+    color: white;
+}
+
+.btn-danger:hover {
+    background-color: var(--color-danger-highlight);
+    box-shadow: inset 0px -4px var(--color-danger);
 }
 
 .area-intro {

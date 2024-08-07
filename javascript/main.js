@@ -18,3 +18,7 @@ function makeLower() {
 function stringLength() {
     cardTwoTarget.textContent = cardTwoSource.value.length;
 }
+
+function clearInput(inputSourceId) {
+    document.getElementById(inputSourceId).value = "";
+}
