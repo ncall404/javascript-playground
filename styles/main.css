@@ -45,6 +45,10 @@ button {
     transition-duration: 150ms;
 }
 
+button:hover {
+    cursor: pointer;
+}
+
 .btn-primary {
     font-weight: 600;
     background-color: var(--color-accent);
