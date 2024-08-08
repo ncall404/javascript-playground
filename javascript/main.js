@@ -70,8 +70,14 @@ function reverseArray() {
     updateCountArrayDisplay();
 }
 
+// Uses the Fisher Yates method of shuffling an array as specified in the w3schools JS Array Sort tutorial.
 function shuffleArray() {
-    countArray.sort(() => 0.5 - Math.random());
+    for (let i = countArray.length - 1; i > 0; i--) {
+        let j = Math.floor(Math.random() * (i + 1));
+        let k = countArray[i];
+        countArray[i] = countArray[j];
+        countArray[j] = k;
+    }
     updateCountArrayDisplay();
 }
 
