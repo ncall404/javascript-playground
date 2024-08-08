@@ -28,7 +28,7 @@ function clearInput(inputSourceId) {
 /*
 Adds a number to the back of the array if 0 is at the front.
 Adds a number to the front of the array if 0 is NOT at the front.
-This can make it weird in the case of the array being randomized but it allowed me to make use of both functions for adding to the array.
+This can make it weird in the case of the array being shuffled but it allowed me to make use of both functions for adding to the array.
 */
 function increaseArray() {
     if (countArray[0] === 0) {
@@ -42,7 +42,7 @@ function increaseArray() {
 /*
 Removes a number from the back of the array if 0 is at the front.
 Removes a number from the front of the array if 0 is NOT at the front.
-As with the increaseArray() function, this can make it weird in the case of the array being randomized but it allowed me to make use of both functions for adding to the array.
+As with the increaseArray() function, this can make it weird in the case of the array being shuffled but it allowed me to make use of both functions for adding to the array.
 */
 function decreaseArray() {
     if (countArray.length > 0) {
@@ -70,7 +70,7 @@ function reverseArray() {
     updateCountArrayDisplay();
 }
 
-function randomizeArray() {
+function shuffleArray() {
     countArray.sort(() => 0.5 - Math.random());
     updateCountArrayDisplay();
 }
