@@ -58,3 +58,8 @@ function reverseArray() {
     countArray.reverse();
     updateCountArrayDisplay();
 }
+
+function randomizeArray() {
+    countArray.sort(function(){return 0.5 - Math.random()});
+    updateCountArrayDisplay();
+}
