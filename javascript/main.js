@@ -60,6 +60,11 @@ function reverseArray() {
 }
 
 function randomizeArray() {
-    countArray.sort(function(){return 0.5 - Math.random()});
+    countArray.sort(() => 0.5 - Math.random());
+    updateCountArrayDisplay();
+}
+
+function sortArray() {
+    countArray.sort((a, b) => a - b)
     updateCountArrayDisplay();
 }
