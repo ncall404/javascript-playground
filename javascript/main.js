@@ -99,5 +99,5 @@ function rollDiceSix() {
     diceOutput.innerHTML = "..."
     setTimeout(() => {
         diceOutput.innerHTML = Math.floor(Math.random() * 6) + 1;
-    }, 250);
+    }, 125);
 }
