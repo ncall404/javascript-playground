@@ -86,6 +86,15 @@ function sortArray() {
     updateCountArrayDisplay();
 }
 
+function sumArrayContents(outputId) {
+    const output = document.getElementById(outputId);
+    let sum = 0;
+    for (num of countArray) {
+        sum += num;
+    }
+    output.innerHTML = sum;
+}
+
 function displayDateTime() {
     const dateTimeOutput = document.getElementById("dateTimeOutput");
     const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
