@@ -93,3 +93,11 @@ function displayDateTime() {
 
     dateTimeOutput.innerHTML = `It is currently ${dateTime.getHours()}:${dateTime.getMinutes()} on ${months[dateTime.getMonth()]} ${dateTime.getDate()}, ${dateTime.getFullYear()}`;
 }
+
+function rollDiceSix() {
+    const diceOutput = document.getElementById("diceOutput");
+    diceOutput.innerHTML = "..."
+    setTimeout(() => {
+        diceOutput.innerHTML = Math.floor(Math.random() * 6) + 1;
+    }, 250);
+}
