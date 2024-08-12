@@ -85,3 +85,11 @@ function sortArray() {
     countArray.sort((a, b) => a - b)
     updateCountArrayDisplay();
 }
+
+function displayDateTime() {
+    const dateTimeOutput = document.getElementById("dateTimeOutput");
+    const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    const dateTime = new Date();
+
+    dateTimeOutput.innerHTML = `It is currently ${dateTime.getHours()}:${dateTime.getMinutes()} on ${months[dateTime.getMonth()]} ${dateTime.getDate()}, ${dateTime.getFullYear()}`;
+}
