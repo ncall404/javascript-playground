@@ -17,6 +17,7 @@
 body {
     background-color: var(--background-light);
     margin: 0 auto;
+    margin-bottom: 150px;
 }
 
 header {
