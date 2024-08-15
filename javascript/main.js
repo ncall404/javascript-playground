@@ -1,23 +1,23 @@
-const cardTwoSource = document.getElementById("txtManipInput");
-const cardTwoTarget = document.getElementById("txtManipOutput");
-const countArray = [];
-
 function giveMessage() {
     window.alert("Test alert!");
 }
 
-function makeUpper() {
-    cardTwoTarget.textContent = cardTwoSource.value.toUpperCase();
-    console.log(cardTwoSource.value);
-}
+// Card 2: Text Manipulation Code Block
+{
+    const cardTwoSource = document.getElementById("txtManipInput");
+    const cardTwoTarget = document.getElementById("txtManipOutput");
 
-function makeLower() {
-    cardTwoTarget.textContent = cardTwoSource.value.toLowerCase();
-    console.log(cardTwoSource.value);
-}
+    function makeUpper() {
+        cardTwoTarget.textContent = cardTwoSource.value.toUpperCase();
+    }
 
-function stringLength() {
-    cardTwoTarget.textContent = cardTwoSource.value.length;
+    function makeLower() {
+        cardTwoTarget.textContent = cardTwoSource.value.toLowerCase();
+    }
+
+    function stringLength() {
+        cardTwoTarget.textContent = cardTwoSource.value.length;
+    }
 }
 
 // Only clears the input text box, not the output text displayed to the page.
@@ -25,74 +25,79 @@ function clearInput(inputSourceId) {
     document.getElementById(inputSourceId).value = "";
 }
 
-/*
-Adds a number to the back of the array if 0 is at the front.
-Adds a number to the front of the array if 0 is NOT at the front.
-This can make it weird in the case of the array being shuffled but it allowed me to make use of both functions for adding to the array.
-*/
-function increaseArray() {
-    if (countArray[0] === 0) {
-        countArray.push(countArray.length);
-    } else {
-        countArray.unshift(countArray.length);
-    }
-    updateCountArrayDisplay();
-}
+// Card 3: Arrays Code Block
+{
+    const countArray = [];
 
-/*
-Removes a number from the back of the array if 0 is at the front.
-Removes a number from the front of the array if 0 is NOT at the front.
-As with the increaseArray() function, this can make it weird in the case of the array being shuffled but it allowed me to make use of both functions for adding to the array.
-*/
-function decreaseArray() {
-    if (countArray.length > 0) {
+    /*
+    Adds a number to the back of the array if 0 is at the front.
+    Adds a number to the front of the array if 0 is NOT at the front.
+    This can make it weird in the case of the array being shuffled but it allowed me to make use of both functions for adding to the array.
+    */
+    function increaseArray() {
         if (countArray[0] === 0) {
-            countArray.pop();
+            countArray.push(countArray.length);
         } else {
-            countArray.shift();
+            countArray.unshift(countArray.length);
         }
         updateCountArrayDisplay();
     }
-}
 
-function updateCountArrayDisplay() {
-    const len = countArray.length;
-    document.getElementById("arrayLength").innerHTML = len;
-    if (len > 0) {
-        document.getElementById("arrayContents").innerHTML = countArray.toString();
-    } else {
-        document.getElementById("arrayContents").innerHTML = "empty";
+    /*
+    Removes a number from the back of the array if 0 is at the front.
+    Removes a number from the front of the array if 0 is NOT at the front.
+    As with the increaseArray() function, this can make it weird in the case of the array being shuffled but it allowed me to make use of both functions for adding to the array.
+    */
+    function decreaseArray() {
+        if (countArray.length > 0) {
+            if (countArray[0] === 0) {
+                countArray.pop();
+            } else {
+                countArray.shift();
+            }
+            updateCountArrayDisplay();
+        }
     }
-}
 
-function reverseArray() {
-    countArray.reverse();
-    updateCountArrayDisplay();
-}
-
-// Uses the Fisher Yates method of shuffling an array as specified in the w3schools JS Array Sort tutorial.
-function shuffleArray() {
-    for (let i = countArray.length - 1; i > 0; i--) {
-        let j = Math.floor(Math.random() * (i + 1));
-        let k = countArray[i];
-        countArray[i] = countArray[j];
-        countArray[j] = k;
+    function updateCountArrayDisplay() {
+        const len = countArray.length;
+        document.getElementById("arrayLength").innerHTML = len;
+        if (len > 0) {
+            document.getElementById("arrayContents").innerHTML = countArray.toString();
+        } else {
+            document.getElementById("arrayContents").innerHTML = "empty";
+        }
     }
-    updateCountArrayDisplay();
-}
 
-function sortArray() {
-    countArray.sort((a, b) => a - b)
-    updateCountArrayDisplay();
-}
-
-function sumArrayContents(outputId) {
-    const output = document.getElementById(outputId);
-    let sum = 0;
-    for (num of countArray) {
-        sum += num;
+    function reverseArray() {
+        countArray.reverse();
+        updateCountArrayDisplay();
     }
-    output.innerHTML = sum;
+
+    // Uses the Fisher Yates method of shuffling an array as specified in the w3schools JS Array Sort tutorial.
+    function shuffleArray() {
+        for (let i = countArray.length - 1; i > 0; i--) {
+            let j = Math.floor(Math.random() * (i + 1));
+            let k = countArray[i];
+            countArray[i] = countArray[j];
+            countArray[j] = k;
+        }
+        updateCountArrayDisplay();
+    }
+
+    function sortArray() {
+        countArray.sort((a, b) => a - b)
+        updateCountArrayDisplay();
+    }
+
+    function sumArrayContents(outputId) {
+        const output = document.getElementById(outputId);
+        let sum = 0;
+        for (num of countArray) {
+            sum += num;
+        }
+        output.innerHTML = sum;
+    }
 }
 
 function displayDateTime() {
