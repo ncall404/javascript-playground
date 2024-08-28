@@ -10,4 +10,4 @@ class Dice {
     }
 }
 
-export default Dice;
+export { Dice };

@@ -19,17 +19,17 @@
         
         <div class="card elevated-box">
             <h2>Card 1: Alerts</h2>
-            <button class="btn-primary" onclick="giveMessage()">Show alert popup</button>
+            <button class="btn-primary" id="alertMessage">Show alert popup</button>
         </div>
 
         <div class="card elevated-box">
             <h2>Card 2: Text manipulation</h2>
             <input type="text" name="txtManipInput" id="txtManipInput" placeholder="Type text here...">
             <p id="txtManipOutput"></p>
-            <button class="btn-primary" onclick="makeUpper()">To Uppercase</button>
-            <button class="btn-primary" onclick="makeLower()">To Lowercase</button>
-            <button class="btn-primary" onclick="stringLength()">Get Length</button>
-            <button class="btn-danger" onclick="clearInput('txtManipInput')">Clear Input</button>
+            <button class="btn-primary" id="makeUpper">To Uppercase</button>
+            <button class="btn-primary" id="makeLower">To Lowercase</button>
+            <button class="btn-primary" id="getStringLength">Get Length</button>
+            <button class="btn-danger" id="clearInput" value="txtManipInput">Clear Input</button>
         </div>
 
         <div class="card elevated-box">
@@ -39,30 +39,30 @@
             <hr>
             <p>Array contents: <span id="arrayContents">empty</span></p>
             <hr>
-            <p>Sum: <span id="sumArrayContents">0</span></p>
-            <button class="btn-primary" onclick="decreaseArray()">Remove</button>
-            <button class="btn-primary" onclick="increaseArray()">Add</button>
-            <button class="btn-primary" onclick="reverseArray()">Reverse</button>
-            <button class="btn-primary" onclick="shuffleArray()">Shuffle</button>
-            <button class="btn-primary" onclick="sortArray()">Sort</button>
-            <button class="btn-primary" onclick="sumArrayContents('sumArrayContents')">Sum</button>
+            <p>Sum: <span id="sumArrayContentsOutput">0</span></p>
+            <button class="btn-primary" id="decreaseArray">Remove</button>
+            <button class="btn-primary" id="increaseArray">Add</button>
+            <button class="btn-primary" id="reverseArray">Reverse</button>
+            <button class="btn-primary" id="shuffleArray">Shuffle</button>
+            <button class="btn-primary" id="sortArray">Sort</button>
+            <button class="btn-primary" id="sumArrayContents" value="sumArrayContentsOutput">Sum</button>
         </div>
 
         <div class="card elevated-box">
             <h2>Card 4: Date and Time</h2>
             <br>
             <p>Results: <span id="dateTimeOutput"></span></p>
-            <button class="btn-primary" onclick="displayDateTime()">Get Date & Time</button>
+            <button class="btn-primary" id="displayDateTime">Get Date & Time</button>
         </div>
 
         <div class="card elevated-box">
-            <h2>Card 5: 6-Sided Dice Roll (Math.random())</h2>
+            <h2>Card 5: 6-Sided Dice Roll (Math.random(), Classes, Import/Export)</h2>
             <br>
             <p>Results: <span id="diceOutput"></span></p>
-            <button class="btn-primary" onclick="rollDiceSix()">Roll Dice</button>
+            <button class="btn-primary" id="rollDiceSix">Roll Dice</button>
         </div>
     </main>
 
-    <script src="javascript/main.js"></script>
+    <script type="module" src="./javascript/main.js"></script>
 </body>
 </html>
