@@ -42,7 +42,7 @@ function stringLength() {
 }
 
 // Only clears the input text box, not the output text displayed to the page.
-function clearInput(event) {
+function clearInput() {
     // Target input text box is specified by the event source button's value.
     document.getElementById(this.value).value = "";
 }
