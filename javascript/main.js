@@ -108,7 +108,7 @@ function shuffleArray() {
 }
 
 function sortArray() {
-    countArray.sort((a, b) => a - b)
+    countArray.sort((a, b) => a - b);
     updateCountArrayDisplay();
 }
 
@@ -131,8 +131,8 @@ function displayDateTime() {
 
 function rollDiceSix() {
     const diceOutput = document.getElementById("diceOutput");
-    const diceObj = new Dice(6)
-    diceOutput.innerHTML = "..."
+    const diceObj = new Dice(6);
+    diceOutput.innerHTML = "...";
     setTimeout(() => {
         diceOutput.innerHTML = diceObj.roll();
     }, 125);
