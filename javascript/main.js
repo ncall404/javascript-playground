@@ -21,6 +21,7 @@ window.onload = () => {
     document.getElementById("rollDiceSix").addEventListener('click', rollDiceSix);
 }
 
+// Card 1: Alerts
 function giveMessage() {
     window.alert("Test alert!");
 }
@@ -48,7 +49,6 @@ function clearInput() {
 }
 
 // Card 3: Arrays
-
 const countArray = [];
 
 /*
@@ -120,7 +120,7 @@ function sumArrayContents() {
     document.getElementById(this.value).innerHTML = sum;
 }
 
-
+// Card 4: Date and Time
 function displayDateTime() {
     const dateTimeOutput = document.getElementById("dateTimeOutput");
     const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
@@ -129,6 +129,7 @@ function displayDateTime() {
     dateTimeOutput.innerHTML = `It is currently ${dateTime.getHours()}:${dateTime.getMinutes()} on ${months[dateTime.getMonth()]} ${dateTime.getDate()}, ${dateTime.getFullYear()}`;
 }
 
+// Card 5: 6-Sided Dice Roll (Math.random, Classes, Import/Export)
 function rollDiceSix() {
     const diceOutput = document.getElementById("diceOutput");
     const diceObj = new Dice(6);
