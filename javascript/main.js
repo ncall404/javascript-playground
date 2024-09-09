@@ -18,7 +18,7 @@ window.onload = () => {
     document.getElementById("sumArrayContents").addEventListener('click', sumArrayContents);
 
     document.getElementById("displayDateTime").addEventListener('click', displayDateTime);
-    document.getElementById("rollDiceSix").addEventListener('click', rollDiceSix);
+    document.getElementById("rollDice").addEventListener('click', rollDice);
 }
 
 // Card 1: Alerts
@@ -129,12 +129,19 @@ function displayDateTime() {
     dateTimeOutput.innerHTML = `It is currently ${dateTime.getHours()}:${dateTime.getMinutes()} on ${months[dateTime.getMonth()]} ${dateTime.getDate()}, ${dateTime.getFullYear()}`;
 }
 
-// Card 5: 6-Sided Dice Roll (Math.random, Classes, Import/Export)
-function rollDiceSix() {
+// Card 5: Dice Roll (Math.random, Classes, Import/Export)
+function rollDice() {
+    const diceSides = document.getElementById("diceSides").value;
     const diceOutput = document.getElementById("diceOutput");
-    const diceObj = new Dice(6);
-    diceOutput.innerHTML = "...";
-    setTimeout(() => {
-        diceOutput.innerHTML = diceObj.roll();
-    }, 125);
+
+    if (Number(diceSides) < 2) {
+        diceOutput.innerHTML = "Number of sides must be at least 2";
+    } else {
+        const diceObj = new Dice(diceSides);
+        // This timeout with the temporary text of "..." makes it clear that there the button is working in the case of getting the same value as a previous roll.
+        diceOutput.innerHTML = "...";
+        setTimeout(() => {
+            diceOutput.innerHTML = diceObj.roll();
+        }, 125);
+    }
 }
