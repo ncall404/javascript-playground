@@ -19,6 +19,8 @@ window.onload = () => {
 
     document.getElementById("displayDateTime").addEventListener('click', displayDateTime);
     document.getElementById("rollDice").addEventListener('click', rollDice);
+
+    document.getElementById("addItem").addEventListener('click', addItem);
 }
 
 // Card 1: Alerts
@@ -144,4 +146,9 @@ function rollDice() {
             diceOutput.innerHTML = diceObj.roll();
         }, 125);
     }
+}
+
+// Card 6: Saved List (Web Storage, DOM Manipulation)
+function addItem() {
+    
 }
