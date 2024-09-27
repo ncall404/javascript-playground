@@ -1,8 +1,8 @@
 import { Dice } from "./dice.js";
+let itemList;
 
 window.onload = () => {
     // Adds click event listeners to buttons.
-        // Note: need to change onclick html attributes to id's for each buttonbefore doing this.
     document.getElementById("alertMessage").addEventListener('click', giveMessage);
 
     document.getElementById("makeUpper").addEventListener('click', makeUpper);
@@ -21,6 +21,15 @@ window.onload = () => {
     document.getElementById("rollDice").addEventListener('click', rollDice);
 
     document.getElementById("addItem").addEventListener('click', addItem);
+    document.getElementById("clearList").addEventListener('click', clearList);
+
+    // Loads stored list items for card 6 if any are stored.
+    if (localStorage.itemList) {
+        itemList = localStorage.getItem("itemList");
+        loadList();
+    } else {
+        itemList = [];
+    }
 }
 
 // Card 1: Alerts
@@ -150,5 +159,48 @@ function rollDice() {
 
 // Card 6: Saved List (Web Storage, DOM Manipulation)
 function addItem() {
+    const itemListInput = document.getElementById("itemListInput");
+
+    // Both adds the item to the array AND resaves the array to localstorage.
+    if (itemListInput.value) {
+        itemList.push(itemListInput.value);
+        localStorage.itemList = itemList;
+
+        itemListInput.value = "";
+        // Replace with better way of updating the list display that doesn't load the whole list each time...
+        loadList();
+    }
+}
+
+function removeItem() {
     
+}
+
+function loadList() {
+    const itemListOutput = document.getElementById("itemList");
+
+    itemList = localStorage.getItem("itemList").split(","); // Retrieves from localstorage and creates array.
+
+    document.getElementById("itemList").innerHTML = ""; // Clears current display of list items.
+
+    // Creates list item for each item in the array.
+    itemList.forEach(item => {
+        const div = document.createElement("div");
+        div.className = "list-item elevated-item";
+        const p = document.createElement("p");
+        p.appendChild(document.createTextNode(item));
+        const deleteBtn = document.createElement("button");
+        deleteBtn.className = "btn-danger";
+        deleteBtn.innerHTML = "Delete";
+        deleteBtn.addEventListener('click', removeItem);
+        div.append(p, deleteBtn);
+
+        itemListOutput.appendChild(div);
+    });
+}
+
+function clearList() {
+    localStorage.removeItem("itemList");
+    itemList = [];
+    document.getElementById("itemList").innerHTML = "";
 }
