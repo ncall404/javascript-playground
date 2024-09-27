@@ -167,21 +167,37 @@ function addItem() {
         localStorage.itemList = itemList;
 
         itemListInput.value = "";
-        // Replace with better way of updating the list display that doesn't load the whole list each time...
-        loadList();
+        
+        displayList();
     }
 }
 
 function removeItem() {
-    
+    const item = this.parentNode;
+    const itemContents = item.firstChild.innerHTML;
+    console.log(itemContents);
+
+    itemList.splice(itemList.indexOf(itemContents), 1);
+    localStorage.itemList = itemList;
+
+    displayList();
 }
 
 function loadList() {
+    itemList = localStorage.getItem("itemList").split(","); // Retrieves from localstorage and creates array.
+    displayList();
+}
+
+function clearList() {
+    localStorage.removeItem("itemList");
+    itemList = [];
+    displayList();
+}
+
+function displayList() {
     const itemListOutput = document.getElementById("itemList");
 
-    itemList = localStorage.getItem("itemList").split(","); // Retrieves from localstorage and creates array.
-
-    document.getElementById("itemList").innerHTML = ""; // Clears current display of list items.
+    itemListOutput.innerHTML = ""; // Clears current display of list items.
 
     // Creates list item for each item in the array.
     itemList.forEach(item => {
@@ -197,10 +213,4 @@ function loadList() {
 
         itemListOutput.appendChild(div);
     });
-}
-
-function clearList() {
-    localStorage.removeItem("itemList");
-    itemList = [];
-    document.getElementById("itemList").innerHTML = "";
 }
