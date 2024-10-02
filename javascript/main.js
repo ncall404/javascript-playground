@@ -21,6 +21,11 @@ window.onload = () => {
     document.getElementById("rollDice").addEventListener('click', rollDice);
 
     document.getElementById("addItem").addEventListener('click', addItem);
+    document.getElementById("itemListInput").addEventListener('keypress', function(e) {
+        if (e.code === "Enter") {
+            document.getElementById("addItem").click();
+        }
+    })
     document.getElementById("clearList").addEventListener('click', clearList);
 
     // Loads stored list items for card 6 if any are stored.
@@ -169,6 +174,8 @@ function addItem() {
         itemListInput.value = "";
         
         displayList();
+
+        itemListInput.focus();
     }
 }
 
