@@ -75,7 +75,7 @@ button:hover {
 }
 
 .area-intro {
-    padding: 10px 0px;
+    padding: 5px 0px 10px 0px;
 }
 
 .area-intro h1 {
@@ -121,4 +121,8 @@ hr {
     color: black;
     border: 0px;
     border-radius: var(--radius-main);
+}
+
+#pageIntro {
+    padding: 25px 0px 20px 0px;
 }
